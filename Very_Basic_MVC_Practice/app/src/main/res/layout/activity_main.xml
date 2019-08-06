@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dp"
+    android:orientation="vertical"
+    android:id="@+id/relativeLayout"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/name_display"
+        layout="@layout/display_view" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <include
+        android:id="@+id/id_display"
+        layout="@layout/display_view" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <include
+        android:id="@+id/score_display"
+        layout="@layout/display_view" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <include
+        android:id="@+id/age_display"
+        layout="@layout/display_view" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/explain_tv"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_orange_light"/>
+        <Button
+            android:id="@+id/update_btn"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_default_small"
+            android:text="Update Information"/>
+    </LinearLayout>
+
+</LinearLayout>
