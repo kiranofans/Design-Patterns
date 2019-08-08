@@ -20,10 +20,11 @@ public class MainActivity extends AppCompatActivity implements Observer, View.On
     private TextView nameTitle, nameDetail, idTitle, idDetail,
             scoreTitle, scoreDetail, ageTitle, ageDetail, explainTv;
     
-    private Button updateBtn;
+    private Button prevBtn, nextBtn, homeBtn;
     private View nameView, idView, scoreView, ageView;
 
     private String str;
+    private int mCurrentIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,9 @@ public class MainActivity extends AppCompatActivity implements Observer, View.On
 
     private void initContentView() {
         explainTv = (TextView) findViewById(R.id.explain_tv);
-        updateBtn = (Button) findViewById(R.id.update_btn);
+        prevBtn = (Button) findViewById(R.id.prev_btn);
+        nextBtn = (Button) findViewById(R.id.next_btn);
+        homeBtn = (Button)findViewById(R.id.home_btn);
 
         nameView = findViewById(R.id.name_display);
         nameTitle = (TextView) nameView.findViewById(R.id.title);
@@ -69,7 +72,9 @@ public class MainActivity extends AppCompatActivity implements Observer, View.On
                 " (also can be activities and fragments)" +
                 "\nController:Activities or fragments";
 
-        updateBtn.setOnClickListener(this);
+        prevBtn.setOnClickListener(this);
+        nextBtn.setOnClickListener(this);
+        homeBtn.setOnClickListener(this);
     }
 
     private void displayInitData(StudentModel model) {
@@ -101,19 +106,30 @@ public class MainActivity extends AppCompatActivity implements Observer, View.On
     public void update(Observable observable, Object o) {
         displayInitData(updateModel);
         explainTv.setText("Data updated!\n" + str);
-        updateBtn.setText("Information Updated!");
+        //prevBtn.setText("Information Updated!");
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.update_btn:
+            case R.id.next_btn:
                 Log.d("TAG", "Clicked");
                 updateModel.setName("Shu");
                 updateModel.setStudentID("23456");
                 updateModel.setScores(80);
                 updateModel.setAge(16);
                 break;
+            case R.id.prev_btn:
+                Log.d("TAG_PREV","Clicked");
+                updateModel.setName("Mama Mia");
+                updateModel.setStudentID("54879");
+                updateModel.setScores(80);
+                updateModel.setAge(16);
+            break;
+            case R.id.home_btn:
+                Log.d("TAG_HOME","Clicked");
+                displayInitData(initModel);
+            break;
         }
     }
 }
