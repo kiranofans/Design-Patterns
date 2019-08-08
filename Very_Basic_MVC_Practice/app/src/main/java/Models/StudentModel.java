@@ -3,8 +3,6 @@ package Models;
 import java.util.Observable;
 
 public class StudentModel extends Observable {
-    /*Basically to type down a set of getters and seters*/
-
     private String name, studentID;
     private int scores,age;
 
