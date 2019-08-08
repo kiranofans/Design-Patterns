@@ -4,7 +4,7 @@ import java.util.Observable;
 
 public class StudentModel extends Observable {
     private String name, studentID;
-    private int scores,age;
+    private int scores, age;
 
     public String getName() {
         return name;
@@ -45,6 +45,4 @@ public class StudentModel extends Observable {
         setChanged();
         notifyObservers();
     }
-
-
 }
