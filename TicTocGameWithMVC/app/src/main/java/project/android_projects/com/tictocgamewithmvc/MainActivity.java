@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements Observer,
                 Toast.makeText(getApplicationContext(),"You've chosen X",
                         Toast.LENGTH_SHORT).show();
                 linearLayout.setVisibility(View.GONE);
-                textView.setText("X's turn");
+                textView.setText("O's turn");
                 break;
             case R.id.restart_btn:
                 linearLayout.setVisibility(View.VISIBLE);
