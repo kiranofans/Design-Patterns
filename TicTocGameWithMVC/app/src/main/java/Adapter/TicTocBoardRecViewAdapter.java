@@ -53,7 +53,6 @@ public class TicTocBoardRecViewAdapter extends RecyclerView.Adapter<TicTocBoardR
         public TicTocViewHolder(@NonNull View itemView) {
             super(itemView);
             ticTocTxtView = (TextView) itemView.findViewById(R.id.tic_toc_btns);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -66,6 +65,7 @@ public class TicTocBoardRecViewAdapter extends RecyclerView.Adapter<TicTocBoardR
                 }
             });
         }
+
     }
     public interface OnItemClickListenerCallback {
         void onItemClick(int position);

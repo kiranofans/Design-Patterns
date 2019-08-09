@@ -31,19 +31,21 @@
             <ImageButton
                 android:id="@+id/x_button"
                 android:layout_gravity="center_vertical"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_x" />
 
             <View
                 android:layout_width="28dp"
-                android:layout_height="28dp" />
+                android:layout_height="50dp" />
 
             <ImageButton
                 android:id="@+id/o_button"
                 android:layout_gravity="center_vertical"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_o" />
 
         </LinearLayout>

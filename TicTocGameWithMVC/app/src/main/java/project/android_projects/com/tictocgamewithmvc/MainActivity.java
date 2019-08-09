@@ -1,6 +1,8 @@
 package project.android_projects.com.tictocgamewithmvc;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -35,12 +37,17 @@ public class MainActivity extends AppCompatActivity implements Observer,
     private Players playerMod;
 
     private LinearLayout linearLayout;
+    private TicTocController ticTocController;
 
+    private LayoutInflater inflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ticTocController = TicTocController.getInstance();
+        inflater = getLayoutInflater();
 
         initContentView();
 
@@ -58,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements Observer,
 
         mAdapter = new TicTocBoardRecViewAdapter(this, xoStrList);
         recView.setLayoutManager(new GridLayoutManager(this, 3));
+        mAdapter.setOnItemClickListener(this);
         recView.setAdapter(mAdapter);
 
         //Initialize buttons
@@ -81,6 +89,17 @@ public class MainActivity extends AppCompatActivity implements Observer,
 
     @Override
     public void onItemClick(int position) {
+        LinearLayout boardLayout = (LinearLayout)inflater.inflate(R.layout.recycle_view_items, null);
+        TextView ticTocTV = boardLayout.findViewById(R.id.tic_toc_btns);
+
+        for(int i =0;i<9;i++){
+
+        }
+        if(position == 0){
+            ticTocTV.setText("X");
+            Log.d("CLICK","Clicked"+ticTocTV);
+
+        }
 
     }
 
