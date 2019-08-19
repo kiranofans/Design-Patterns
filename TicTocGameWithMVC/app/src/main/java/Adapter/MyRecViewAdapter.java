@@ -11,16 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import Models.Players;
 import project.android_projects.com.tictocgamewithmvc.R;
 
-public class TicTocBoardRecViewAdapter extends RecyclerView.Adapter<TicTocBoardRecViewAdapter.TicTocViewHolder>{
+public class MyRecViewAdapter extends RecyclerView.Adapter<BaseViewModel>{
     private Context mContext;
 
     private List<String> ticTocXoList;
 
     private OnItemClickListenerCallback mListener;
 
-    public TicTocBoardRecViewAdapter(Context context, List<String> ticTocItems) {
+    public MyRecViewAdapter(Context context, List<String> ticTocItems) {
         this.mContext = context;
         this.ticTocXoList = ticTocItems;
     }
@@ -38,16 +39,19 @@ public class TicTocBoardRecViewAdapter extends RecyclerView.Adapter<TicTocBoardR
     }
 
     @Override
-    public void onBindViewHolder(TicTocViewHolder holder, int pos){
-        holder.ticTocTxtView.setText(ticTocXoList.get(pos));
+    public void onBindViewHolder(@NonNull BaseViewModel holder, int position) {
+        holder.bind(ticTocXoList.get(position));
     }
+
 
     @Override
     public int getItemCount() {
         return ticTocXoList.size();
     }
 
-    public class TicTocViewHolder extends RecyclerView.ViewHolder{
+
+
+    public class TicTocViewHolder extends BaseViewModel<Players>{
         public TextView ticTocTxtView;
 
         public TicTocViewHolder(@NonNull View itemView) {
@@ -64,6 +68,11 @@ public class TicTocBoardRecViewAdapter extends RecyclerView.Adapter<TicTocBoardR
                     }
                 }
             });
+        }
+
+        @Override
+        public void bind(Players obj) {
+            ticTocTxtView.setText(obj.getPlayerX());
         }
 
     }

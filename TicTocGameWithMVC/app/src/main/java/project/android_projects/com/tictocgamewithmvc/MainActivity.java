@@ -19,12 +19,12 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-import Adapter.TicTocBoardRecViewAdapter;
+import Adapter.MyRecViewAdapter;
 import Models.Players;
 
 public class MainActivity extends AppCompatActivity implements Observer,
-        TicTocBoardRecViewAdapter.OnItemClickListenerCallback, View.OnClickListener {
-    private TicTocBoardRecViewAdapter mAdapter;
+        MyRecViewAdapter.OnItemClickListenerCallback, View.OnClickListener {
+    private MyRecViewAdapter mAdapter;
     private RecyclerView recView;
 
     private List<String> xoStrList;
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements Observer,
         xoStrList = new ArrayList<>();
         createTicTocBoard(xoStrList);
 
-        mAdapter = new TicTocBoardRecViewAdapter(this, xoStrList);
+        mAdapter = new MyRecViewAdapter(this, xoStrList);
         recView.setLayoutManager(new GridLayoutManager(this, 3));
         mAdapter.setOnItemClickListener(this);
         recView.setAdapter(mAdapter);
@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements Observer,
 
         }
         if(position == 0){
-            ticTocTV.setText("X");
             Log.d("CLICK","Clicked"+ticTocTV);
 
         }
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements Observer,
         switch (view.getId()){
             case R.id.o_button:
                 //the player chooses o
-                Toast.makeText(getApplicationContext(),"You've chosen O",
+                Toast.makeText(getApplicationContext(),"You've chosen Nought",
                         Toast.LENGTH_SHORT).show();
                 linearLayout.setVisibility(View.GONE);
                 textView.setText("O's turn");
@@ -123,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements Observer,
                 break;
             case R.id.x_button:
                 //the player chooses x
-                Toast.makeText(getApplicationContext(),"You've chosen X",
+                Toast.makeText(getApplicationContext(),"You've chosen Cross",
                         Toast.LENGTH_SHORT).show();
                 linearLayout.setVisibility(View.GONE);
                 textView.setText("O's turn");

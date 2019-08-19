@@ -68,4 +68,11 @@
         android:background="@android:drawable/btn_default"
         android:text="Restart" />
 
+    <!--<include layout="@layout/tic_toc_board"
+        android:id="@+id/board_row1"/>
+    <include layout="@layout/tic_toc_board"
+        android:id="@+id/board_row2"/>
+    <include layout="@layout/tic_toc_board"
+        android:id="@+id/board_row3"/>
+-->
 </LinearLayout>
