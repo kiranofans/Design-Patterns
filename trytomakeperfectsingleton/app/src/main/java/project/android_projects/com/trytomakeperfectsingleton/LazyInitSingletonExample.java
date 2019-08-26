@@ -1,12 +1,7 @@
 package project.android_projects.com.trytomakeperfectsingleton;
 
-/**
- * Singleton classes should be thread-safe, which means
- * when comes to multi threads, the hashcode should be
- * always the same for multiple class instances.
- * Singleton classes also should be reflection proof, so
- * if the instances have different hash codes the RuntimeException will throw
- */
+/** Create new instance of the calls when needed
+ * while the eagerInitialized singleton creates instance at the time of class loading*/
 public class LazyInitSingletonExample {
     /**
      * Use the volatile keyword for thread-safe

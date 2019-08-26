@@ -8,6 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+/**
+ * Singleton classes should be thread-safe, which means
+ * when comes to multi threads, the hashcode should be
+ * always the same for multiple class instances.
+ * Singleton classes also should be reflection proof, so
+ * if the instances have different hash codes the RuntimeException will throw
+ */
 public class MainActivity extends AppCompatActivity {
     private EagerInitSingletonExample eagerSingleton;
     private LazyInitSingletonExample lazySingleton, lazySingleton2;
