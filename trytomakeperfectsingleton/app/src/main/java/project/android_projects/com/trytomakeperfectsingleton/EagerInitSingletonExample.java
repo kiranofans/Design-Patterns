@@ -13,7 +13,7 @@ public class EagerInitSingletonExample {
 
 
     public static EagerInitSingletonExample getInstance() {
-        return singletonInstance;//different from lazy initialized sigleton
+        return singletonInstance;//different from lazy initialized singleton
     }
 
 
