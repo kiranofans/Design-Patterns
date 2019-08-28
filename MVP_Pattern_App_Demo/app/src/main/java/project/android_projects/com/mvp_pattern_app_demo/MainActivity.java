@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements LoginMVP.LoginVie
         setContentView(R.layout.activity_main);
 
         //Need to add android:name="root.AppApplication" to avoid CastException
+        //root better be in lowercase
         ((AppApplication) getApplication()).getComponent().inject(this);
 
 
