@@ -15,7 +15,9 @@ import root.AppApplication;
 
 public class MainActivity extends AppCompatActivity implements LoginMVP.LoginView {
 
-    @Inject //must add Inject annotation; otherwise, loginView will be null
+    //must add Inject annotation so dagger components interface will be used;
+    // otherwise, loginView will be null
+    @Inject
     LoginMVP.Presenter loginPresenter; //Dagger doesn't support Injection into private fields
 
     private EditText username, password;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements LoginMVP.LoginVie
 
         //Need to add android:name="root.AppApplication" to avoid CastException
         ((AppApplication) getApplication()).getComponent().inject(this);
+
 
         initContent();
     }
