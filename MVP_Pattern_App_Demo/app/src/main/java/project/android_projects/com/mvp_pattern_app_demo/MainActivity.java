@@ -1,12 +1,12 @@
 package project.android_projects.com.mvp_pattern_app_demo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import javax.inject.Inject;
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements LoginMVP.LoginVie
         initContent();
     }
 
-    private void initContent(){
+    private void initContent() {
         username = findViewById(R.id.input_box_username);
         password = findViewById(R.id.input_box_password);
         loginBtn = findViewById(R.id.button_login);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements LoginMVP.LoginVie
 
     @Override
     public void showInputError() {
-        Toast.makeText(this, "Username or password cannote be empty",
+        Toast.makeText(this, "Username or password cannot be empty",
                 Toast.LENGTH_SHORT).show();
     }
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements LoginMVP.LoginVie
 
     @Override
     public void showUserSavedMessage() {
-        Toast.makeText(this,"User info saved successfully!",
+        Toast.makeText(this, "User info saved successfully!",
                 Toast.LENGTH_SHORT).show();
     }
 }
